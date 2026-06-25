@@ -16,22 +16,34 @@ useGLTF.preload(MODEL_URL);
 const HERO = 0.14; // progress reserved for the image hero
 function Rig({ children }: { children: React.ReactNode }) {
   const group = useRef<THREE.Group>(null);
-  const target = useRef(new THREE.Vector3(0, 3.4, 17));
+  const target = useRef(new THREE.Vector3(0, 3, 16));
   useFrame((state, delta) => {
     const p = scroll.progress;
-    if (group.current) group.current.visible = p > HERO;
+    const g = group.current;
+    if (!g) return;
+    g.visible = p > HERO;
     const e0 = THREE.MathUtils.clamp((p - HERO) / (1 - HERO), 0, 1);
     const e = e0 * e0 * (3 - 2 * e0); // smoothstep over the journey
-    const dist = THREE.MathUtils.lerp(17, 5.4, e);
-    const az = THREE.MathUtils.lerp(-0.35, 1.6, e0);
-    const height = THREE.MathUtils.lerp(3.4, 1.7, e);
+    const t = state.clock.elapsedTime;
+
+    // The hauler DRIVES the route (cab faces +X): enters from the left, drives
+    // forward across the frame and grows, with a road bob + subtle sway.
+    const driveX = THREE.MathUtils.lerp(-4.6, 1.6, e);
+    g.position.x = THREE.MathUtils.lerp(g.position.x, driveX, 0.12);
+    g.position.y = g.visible ? Math.sin(t * 5) * 0.045 : 0;
+    g.rotation.z = Math.sin(t * 2.3) * 0.008;
+
+    // camera dollies in (small→big) with a gentle orbit, fixed look target
+    const dist = THREE.MathUtils.lerp(16, 6, e);
+    const az = THREE.MathUtils.lerp(0.34, -0.2, e);
+    const height = THREE.MathUtils.lerp(3.0, 1.7, e);
     target.current.set(
-      Math.sin(az) * dist + state.pointer.x * 0.6,
+      Math.sin(az) * dist + state.pointer.x * 0.5,
       height + state.pointer.y * 0.3,
       Math.cos(az) * dist
     );
     state.camera.position.lerp(target.current, 1 - Math.pow(0.0009, delta));
-    state.camera.lookAt(0, 0.8, 0);
+    state.camera.lookAt(0, 0.85, 0);
   });
   return <group ref={group}>{children}</group>;
 }
