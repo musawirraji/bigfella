@@ -1,0 +1,37 @@
+{
+  "name": "bigfella",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bigfella Auto Express — AI logistics demo. Instant quote + 8-second reply (speed-to-lead) for a Houston auto-transport brokerage. Cinematic, premium, dark-luxury.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.86",
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "ai": "^6.0.209",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.24",
+    "next": "16.1.7",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "three": "^0.184.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sass": "^1.98.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

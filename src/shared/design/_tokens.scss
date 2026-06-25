@@ -1,0 +1,91 @@
+// =====================================================================
+// Bigfella — design tokens (single source of truth, `$`-vars only).
+// This module emits NO CSS. globals.scss maps these into :root custom
+// properties (--bf-*) once; the rest of the sheet reads var(--bf-*).
+// Prefix: bf-
+// =====================================================================
+
+// --- Primitives: ink (obsidian) ramp ---------------------------------
+$ink-1000: #050609; // page base, deepest void
+$ink-950:  #08090d;
+$ink-900:  #0c0e13; // surface
+$ink-850:  #11141a;
+$ink-800:  #171b22; // raised surface
+$ink-700:  #1e232c; // hairline-on-dark
+$ink-600:  #2a313d; // border
+$ink-500:  #3b4453; // strong border / disabled stroke
+$ink-400:  #545d6e;
+
+// --- Primitives: warm neutral (headlight) ramp -----------------------
+$paper-50:  #f6f3ec; // primary text — warm off-white
+$paper-200: #d8d4ca;
+$paper-300: #b4afa3; // muted text
+$paper-400: #8b867b; // dim text
+$paper-500: #66625a; // faint / placeholder
+
+// --- Primitives: champagne / brass accent (the one accent) -----------
+$brass-100: #f4e3c4;
+$brass-200: #ecd199; // accent light
+$brass-300: #dcb46a; // ACCENT (base) — headlight champagne
+$brass-400: #c79a4c; // accent strong
+$brass-500: #a67c39; // accent deep
+$brass-glow: rgba(220, 180, 106, 0.28);
+
+// --- Primitives: signal (dashboard good/bad only) --------------------
+$signal-good: #5cc08c;
+$signal-bad:  #e0594d;
+$signal-warn: #e0a23c;
+
+// --- Type families ----------------------------------------------------
+$font-display: "Clash Display", "Satoshi", system-ui, sans-serif; // bold, commanding
+$font-text:    "Satoshi", system-ui, -apple-system, sans-serif;   // body / UI
+$font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", monospace; // numbers, timers
+
+// --- Type scale (fluid clamp, mobile-first) --------------------------
+$fs-display-xl: clamp(3.25rem, 9vw, 7.5rem);   // hero headline
+$fs-display-l:  clamp(2.5rem, 6vw, 4.5rem);
+$fs-display-m:  clamp(2rem, 4.2vw, 3rem);       // section heads
+$fs-h1: clamp(1.75rem, 3vw, 2.25rem);
+$fs-h2: clamp(1.4rem, 2.2vw, 1.6rem);
+$fs-h3: 1.2rem;
+$fs-body-l: 1.125rem;
+$fs-body: 1rem;
+$fs-sm: 0.9375rem;
+$fs-xs: 0.8125rem;
+$fs-stat: clamp(4rem, 12vw, 9rem);              // the big metric number
+
+// --- Spacing (4px base) ----------------------------------------------
+$sp-1: 0.25rem;
+$sp-2: 0.5rem;
+$sp-3: 0.75rem;
+$sp-4: 1rem;
+$sp-5: 1.5rem;
+$sp-6: 2rem;
+$sp-7: 3rem;
+$sp-8: 4rem;
+$sp-9: 6rem;
+$sp-10: 8rem;
+
+// --- Radii ------------------------------------------------------------
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-xl: 24px;
+$radius-pill: 999px;
+
+// --- Elevation / glow (dark theme) -----------------------------------
+$shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+$shadow-2: 0 8px 24px -8px rgba(0, 0, 0, 0.6);
+$shadow-3: 0 24px 60px -16px rgba(0, 0, 0, 0.7);
+$glow-accent: 0 0 0 1px rgba(220, 180, 106, 0.25), 0 8px 40px -8px rgba(220, 180, 106, 0.35);
+
+// --- Motion -----------------------------------------------------------
+$dur-fast: 160ms;
+$dur-base: 280ms;
+$dur-slow: 600ms;
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);   // expo-ish reveal
+$ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+// --- Layout -----------------------------------------------------------
+$maxw: 1200px;
+$maxw-text: 720px;
