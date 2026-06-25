@@ -41,12 +41,12 @@ export function Loader() {
           <path d="M41 22 C43 16 49 14 57 14 L65 14 L65 22 Z" fill="#fff" opacity="0.9" />
           <path d="M69 14 L74 14 C82 14 88 17 93 22 L69 22 Z" fill="#fff" opacity="0.9" />
           <circle cx="111" cy="32" r="2.6" fill="#fff" opacity="0.85" />
-          <g className="bf-load__wheel" style={{ transformOrigin: "33px 39px" }}>
+          <g className="bf-load__wheel">
             <circle cx="33" cy="39" r="8.6" fill="#0a0b0d" />
             <circle cx="33" cy="39" r="2.8" fill="#fff" />
             <rect x="32" y="31" width="2" height="16" rx="1" fill="#fff" opacity="0.5" />
           </g>
-          <g className="bf-load__wheel" style={{ transformOrigin: "95px 39px" }}>
+          <g className="bf-load__wheel">
             <circle cx="95" cy="39" r="8.6" fill="#0a0b0d" />
             <circle cx="95" cy="39" r="2.8" fill="#fff" />
             <rect x="94" y="31" width="2" height="16" rx="1" fill="#fff" opacity="0.5" />
