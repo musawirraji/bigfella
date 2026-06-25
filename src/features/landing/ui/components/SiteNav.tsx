@@ -33,12 +33,14 @@ export function SiteNav() {
         <a className="bf-nav2__brand" href="#top">BIGFELLA<span className="bf-nav2__sub"> AUTO EXPRESS</span></a>
         <div className="bf-nav2__cluster">
           <button className="bf-nav2__round" aria-label="Bigfella" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>{Mark}</button>
-          <a className="bf-pill bf-pill--dark" href="#dispatch"><span>Get a quote</span><span className="bf-pill__dot" /></a>
+          <a className="bf-pill bf-pill--dark" href="#dispatch"><span>Get a quote</span>
+            <svg className="bf-pill__ic" viewBox="0 0 16 16" aria-hidden><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </a>
           <button className={`bf-pill bf-pill--ghost bf-toggle ${open ? "is-open" : ""}`} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
             <span className="bf-toggle__swap">
               <span className="bf-toggle__inner">
-                <span className="bf-toggle__row">Menu<span className="bf-pill__dots">••</span></span>
-                <span className="bf-toggle__row">Close<span className="bf-pill__dots">✕</span></span>
+                <span className="bf-toggle__row">Menu<svg className="bf-pill__ic" viewBox="0 0 16 13" aria-hidden><path d="M1 2h14M1 6.5h14M1 11h9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg></span>
+                <span className="bf-toggle__row">Close<svg className="bf-pill__ic" viewBox="0 0 14 14" aria-hidden><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg></span>
               </span>
             </span>
           </button>
@@ -50,9 +52,10 @@ export function SiteNav() {
       <div className={`bf-menu2 ${open ? "is-open" : ""}`} aria-hidden={!open}>
         <div className="bf-menu2__panels">
           <div className="bf-menu2__card bf-menu2__links">
-            {LINKS.map((l, i) => (
+            {LINKS.map((l) => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
-                {l.label}{i === 0 ? <span className="bf-menu2__dot" /> : null}
+                <span>{l.label}</span>
+                <svg className="bf-menu2__arr" viewBox="0 0 16 16" aria-hidden><path d="M5 11L11 5M6 5h5v5" stroke="currentColor" strokeWidth="1.7" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </a>
             ))}
           </div>

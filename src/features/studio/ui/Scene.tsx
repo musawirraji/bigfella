@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, ContactShadows, AdaptiveDpr, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { Vehicle } from "./Vehicle";
-import { scroll } from "./scrollStore";
+import { scroll, HERO } from "./scrollStore";
 
 const MODEL_URL = "/models/hauler.glb";
 useGLTF.preload(MODEL_URL);
@@ -13,7 +13,6 @@ useGLTF.preload(MODEL_URL);
 // The hauler is HIDDEN during the new hero (an image-based section); it enters
 // after, then the camera dollies IN (small→big) while orbiting. Frame-rate
 // independent + pointer parallax.
-const HERO = 0.14; // progress reserved for the image hero
 function Rig({ children }: { children: React.ReactNode }) {
   const group = useRef<THREE.Group>(null);
   const target = useRef(new THREE.Vector3(0, 3, 16));
@@ -69,7 +68,7 @@ export function Scene() {
 
         <Rig>
           <Vehicle url={MODEL_URL} target={5.6} />
-          <ContactShadows position={[0, 0.001, 0]} opacity={0.32} scale={22} blur={2.6} far={6} resolution={1024} color="#2a2618" />
+          <ContactShadows position={[0, 0.001, 0]} opacity={0.22} scale={22} blur={3} far={6} resolution={1024} color="#2a2618" />
         </Rig>
       </Suspense>
       <AdaptiveDpr pixelated />

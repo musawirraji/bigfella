@@ -84,10 +84,12 @@ export function StoryLanding() {
             <div className="bf-herox__top">
               <h1 className="bf-herox__title">Every mile,<br />handled.</h1>
               <ul className="bf-herox__trust">
-                <li>Vetted carriers</li>
-                <li>Fully insured</li>
-                <li>Real-time tracking</li>
-                <li>Houston → anywhere</li>
+                {["Vetted carriers", "Fully insured", "Real-time tracking", "Houston → anywhere"].map((x) => (
+                  <li key={x}>
+                    <svg className="bf-herox__chk" viewBox="0 0 16 16" aria-hidden><path d="M2.5 8.5l3.4 3.5L13.5 4" /></svg>
+                    {x}
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="bf-herox__bottom">
@@ -97,7 +99,7 @@ export function StoryLanding() {
               </figure>
               <div className="bf-herox__aside">
                 <p className="bf-herox__para">White-glove auto transport — vetted, insured carriers, real-time tracking, and a quote that holds. For the cars people actually care about, Houston to anywhere.</p>
-                <a className="bf-pill bf-pill--light" href="#dispatch"><span className="bf-pill__dot bf-pill__dot--ink" /><span>Get a quote</span></a>
+                <a className="bf-pill bf-pill--light" href="#dispatch"><span>Get a quote</span><svg className="bf-pill__ic" viewBox="0 0 16 16" aria-hidden><path d="M3 8h9M8.5 4.5L12 8l-3.5 3.5" stroke="currentColor" strokeWidth="1.6" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg></a>
               </div>
             </div>
             <p className="bf-herox__cue">Scroll to explore ↓</p>
