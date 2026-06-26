@@ -776,6 +776,11 @@ html { scroll-behavior: smooth; }
   .bf-nav2__round { width: 38px; height: 38px; }
   .bf-menu2 { width: min(420px, calc(100vw - 2rem)); }
 }
+@media (max-width: 400px) {
+  .bf-nav2__round { display: none; }            // drop the decorative button so the pills fit
+  .bf-nav2 { padding-inline: 0.85rem; }
+  .bf-pill { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+}
 
 // chapters on phone/tablet: text drops to the bottom, left-aligned, over a
 // scrim of the chapter colour so it's legible above the (centred) hauler.
