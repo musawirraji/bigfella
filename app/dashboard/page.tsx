@@ -32,7 +32,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: Pr
           <BrandMark className="bf-ops__mark" />
           Bigfella<span> / operations</span>
         </Link>
-        <span className="bf-ops__badge">Live · in-memory demo</span>
+        <span className="bf-ops__badge" style={{ whiteSpace: "nowrap" }}>Live demo</span>
       </header>
       <main className="bf-container" style={{ paddingBlock: "2.5rem" }}>
         <DashboardView leads={leads} stats={stats} />

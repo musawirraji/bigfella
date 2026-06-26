@@ -777,6 +777,17 @@ html { scroll-behavior: smooth; }
   .bf-menu2 { width: min(420px, calc(100vw - 2rem)); }
 }
 
+// chapters on phone/tablet: text drops to the bottom, left-aligned, over a
+// scrim of the chapter colour so it's legible above the (centred) hauler.
+@media (max-width: 900px) {
+  .bf-h3__section { justify-content: flex-end; padding-bottom: 13vh; }
+  .bf-h3__section::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 34%, transparent 72%); pointer-events: none; }
+  .bf-h3__col, .bf-h3__cta > * { position: relative; }
+  .bf-h3__right { align-items: flex-start; text-align: left; }
+  .bf-h3__right .bf-h3__col { margin-left: 0; }
+  .bf-h3__cta { align-items: flex-start; text-align: left; }
+}
+
 // =====================================================================
 // Reduced motion — everything animates once, then rests.
 // =====================================================================
