@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.scss";
 
 export const metadata: Metadata = {
-  title: "Bigfella Auto Express — Style Guide",
-  description: "Design system specimen for Bigfella Auto Express. Cinematic, concierge, dark-luxury auto transport.",
+  title: "Bigfella Auto Express: instant auto transport quotes",
+  description: "White-glove auto transport out of Houston, Texas. Real lane pricing in seconds, with vetted, insured carriers.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
